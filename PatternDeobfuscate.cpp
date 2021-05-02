@@ -599,11 +599,11 @@ struct ObfCompilerOptimizer : public optinsn_t
 
 	// This is the virtual function dictated by the optinsn_t interface. This
 	// function gets called by the Hex-Rays kernel; we optimize the microcode.
-	int func(mblock_t *blk, minsn_t *ins);
+	int func(mblock_t* blk, minsn_t* ins, int optflags);
 };
 
 // Callback function. Do pattern-deobfuscation.
-int ObfCompilerOptimizer::func(mblock_t *blk, minsn_t *ins)
+int ObfCompilerOptimizer::func(mblock_t* blk, minsn_t* ins, int optflags)
 {
 #if OPTVERBOSE
 	char buf[1000];

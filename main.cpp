@@ -26,7 +26,7 @@ ObfCompilerOptimizer hook;
 CFUnflattener cfu;
 
 //--------------------------------------------------------------------------
-int idaapi init(void)
+plugmod_t *idaapi init(void)
 {
 	if (!init_hexrays_plugin())
 		return PLUGIN_SKIP; // no decompiler
